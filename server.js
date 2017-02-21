@@ -64,6 +64,41 @@ router.post('/users/create', function(req, res){
 	
 });
 
+router.get('/users/list', function(req, res){
+	User.find({}, function(err, usuarios){
+		if(err){
+			res.status(500).json({
+				sucesso: false,
+				erro: err.message
+			});		
+		}else{
+			res.status(200).json({
+				sucesso: true,
+				dados: usuarios
+			})
+		}
+	})
+})
+
+router.get('/users/search', function(req, res){
+	var _nome = req.query.nome;
+	User.find({nome: new RegExp(_nome, "i")}, function(err, usuarios){
+		if(err){
+			res.status(500).json({
+				sucesso: false,
+				erro: err.message
+			});
+		}else{
+			res.status(200).json({
+				sucesso: true,
+				dados: usuarios
+			})	
+		}		
+		
+	})
+
+});
+
 // more routes for our API will happen here
 
 // REGISTER OUR ROUTES -------------------------------
