@@ -1,0 +1,31 @@
+{
+  "name": "sportsrating",
+  "version": "1.0.0",
+  "description": "System to rate football matches. In this system you can rate a member, a match, you can split members in teams by rating. Also you can schedule matches.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acmh/sportsrating.git"
+  },
+  "keywords": [
+    "football",
+    "matches",
+    "rating",
+    "system",
+    "rating"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/acmh/sportsrating/issues"
+  },
+  "homepage": "https://github.com/acmh/sportsrating#readme",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "express": "^4.14.1"
+  }
+}
