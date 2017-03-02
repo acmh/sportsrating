@@ -9,7 +9,6 @@ var expr = require('express');
 var db = mongoose(),
 	app = express();
 
-
 app.listen(config.port);
 console.log(__dirname);
 app.use(expr.static(path.join(__dirname, 'public')));
