@@ -8,7 +8,6 @@ module.exports = function(app) {
 	app.route('/api/users/login')
 		.post(users.login);
 	
-
 	app.route('/update')
 		.post(users.update);
 };
