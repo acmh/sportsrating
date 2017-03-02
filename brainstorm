@@ -1,0 +1,33 @@
+Evento
+- Atributos: DataInicio(Fim), HoraInicio(Fim), Endereço,
+,Array de Usuario, Decricao, Nome, Preço, Condicoes Climaticas
+- Tamanho do time
+- Array de quem chegou no evento
+- Array de quem pagou
+
+Rotas de Eventos
+
+- /match/create - Criar um evento
+- /match/delete - Deleta um evento
+- /match/update - Atualiza um evento
+- /match/team/sort - Divide os times
+- /match/user/vote - Ao final da partida atribui notas de maneira 360 a
+todos  os usuarios do evento menos do seu time de 1 a 5 estrelas na posicao goleirou ou linha
+- /match/list - Lista todos os eventos já cadastrados
+- /match/user/arrives - Rota referente a presença dos participantes
+- /match/user/pay - Quem criou o evento confirma o pagamento de outro usuario
+
+Usuario
+
+- Atributos: Nome, email, password, media_da_nota da posicao, media da presença, foto
+
+Rotas de Usuario:
+
+- /user/register - Registra na plataforma
+- /user/login
+- /user/logout
+- /user/match/enter - Entra em um evento criado
+- /user/match/leave -
+- /user/profile - Vê o seu proprio perfil
+- /user/update - Atualiza o perfil do usuário
+- /user/list - Lista todos usuario
