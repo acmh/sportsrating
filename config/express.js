@@ -20,6 +20,7 @@ module.exports = function(){
 
   //Put other routes definitions here
   require('../api/routes/users.routes.js')(app);
+  require('../api/routes/events.routes.js')(app);
 
   return app;
 };
