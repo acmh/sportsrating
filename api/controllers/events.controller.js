@@ -44,3 +44,19 @@ exports.create = function(req, res){
 		}
 	})
 }
+
+exports.delete = function(req, res){
+  var _id = req.body.id;
+  Events.findOneAndRemove({_id: _id}, function(err, _event){
+    if(err){
+      res.status(500).json({
+        message: err.message
+      });
+    }
+    else {
+      res.status(200).json({
+        message: "Event remove successfully"
+      });
+    }
+  });
+}
