@@ -44,3 +44,34 @@ exports.create = function(req, res){
 		}
 	})
 }
+
+exports.listAllEvents = function(req, res){
+
+	Events.find({}, function(err, events) {
+
+		if(err){
+			res.status(404).json(err);
+			return;
+		}
+
+		if(!events){
+			res.status(401).json({
+				success: false,
+				message: 'Events not found.'
+			});
+		}else if(events){
+			var eventsMap = {};
+			
+			for (i = 0; i < events.length; i++) 
+			{
+    			eventsMap[i] = events;
+			}
+		
+			res.status(200).json({
+				events : eventsMap
+			});
+			
+			//res.send(eventsMap);
+		}
+	});
+};

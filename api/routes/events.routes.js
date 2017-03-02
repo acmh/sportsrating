@@ -4,5 +4,8 @@ module.exports = function(app) {
 
 	app.route('/api/event/create')
 		.post(events.create);
+
+	app.route('/api/event/list')
+		.get(events.listAllEvents);
   
 };
