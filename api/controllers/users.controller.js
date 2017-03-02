@@ -78,3 +78,41 @@ exports.login = function(req,res){
 		}
 	});
 }
+
+exports.update = function (req,res) {
+		var user = req.decoded;
+		var newEmail = req.body.email;
+		if(typeof newEmail != 'undefined')
+		User.findOne({email: newEmail}, function(err, user){
+			if(!err){
+				res.status(500).json({
+					message: err.message
+				})
+			}
+			if(!user){
+				res.status(401).json({
+					message: 'Authentication failed. User not found.'
+				});
+			}
+
+			user.email = req.body.email;
+			res.status(401).json({
+				message: 'Email Update!'
+			});
+
+		});
+
+		var newPassword = req.body.password;
+		if(typeof newPassword != 'undefined')
+		user.setPassword(req.body.password);
+
+
+	
+		user.save(function(err){
+			if(err){
+				res.status(500).json({
+					message: err.message
+				})
+			}
+		});
+	}
