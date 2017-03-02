@@ -1,8 +1,8 @@
 var events = require('../../api/controllers/events.controller');
 
-module.exports = function(app) {
+module.exports = function(router) {
 
-	app.route('/api/event/create')
+	router.route('/event/create')
 		.post(events.create);
-  
+
 };

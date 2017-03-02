@@ -11,7 +11,7 @@ var port = process.env.PORT || 8080;        // set our port
 
 module.exports = function(){
   var app        = express();   // define our app using express
-
+  var router = express.Router();
   // configure app to use bodyParser()
   // this will let us get the data from a POST
   app.use(bodyParser.urlencoded({ extended: true }));
@@ -19,8 +19,9 @@ module.exports = function(){
 
 
   //Put other routes definitions here
-  require('../api/routes/users.routes.js')(app);
-  require('../api/routes/events.routes.js')(app);
+  require('../api/routes/users.routes.js')(router);
+  require('../api/routes/events.routes.js')(router);
 
+  app.use('/api', router);
   return app;
 };

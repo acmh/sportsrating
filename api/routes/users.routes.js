@@ -1,10 +1,10 @@
 var users = require('../../api/controllers/users.controller');
 
-module.exports = function(app) {
+module.exports = function(router) {
 
-	app.route('/api/users/register')
+	router.route('/users/register')
 		.post(users.register);
 
-	app.route('/api/users/login')
+	router.route('/users/login')
 		.post(users.login);
 };
