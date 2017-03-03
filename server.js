@@ -13,6 +13,5 @@ app.listen(config.port);
 console.log(__dirname);
 app.use(expr.static(path.join(__dirname, 'public')));
 
-
 module.exports = app;
 console.log(process.env.NODE_ENV + ' server running at http://localhost:' + config.port);

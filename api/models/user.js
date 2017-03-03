@@ -6,11 +6,21 @@ var jwt = require('jsonwebtoken');
 var UserSchema = new Schema({
 	email: { type: String, unique: true, trim: true },
 	name: {type: String, trim: true},
+	nickname: {type: String, unique: true, trim: true},
+	rating: {type: Number},
+	position: {type: [String], trim: true},
+	last_game: {type: Date},
+	entry_date: {type: Date},
+	goals: {type: Number},
+	matches: {type: Number},
+	cards: {type: [Number]},
+	age: {type: Number},
+	weight: {type: Number},
+	height: {type: Number},
+	assists: {type: Number},
 	password: String,
 	salt: String
 });
-
-
 
 UserSchema.methods.setPassword = function(password){
   this.salt = crypto.randomBytes(16).toString('hex');
